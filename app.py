@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Load model
-with open("house_price_model.pkl", "rb") as file:
+with open("House_price_model.pkl", "rb") as file:
     model = pickle.load(file)
 
 st.set_page_config(page_title="House Price Prediction", layout="centered")
@@ -60,3 +60,4 @@ input_data = input_data[model.feature_names_in_]
 if st.button("Predict Price"):
     prediction = model.predict(input_data)[0]
     st.success(f"💰 Estimated House Price: ₹ {int(prediction):,}")
+
